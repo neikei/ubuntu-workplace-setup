@@ -25,9 +25,8 @@ My software stack for the daily business on my preferred OS [Ubuntu Gnome](https
 
 1. wget https://github.com/neikei/ubuntu-workplace-setup/archive/master.zip
 2. unzip master.zip
-3. cd ubuntu-workplace-setup
-4. chmod +x setup.sh
-5. ./setup.sh
+3. cd ubuntu-workplace-setup-master
+4. ./setup.sh
 
 ### Vagrantbox for testing
 

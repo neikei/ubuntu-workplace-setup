@@ -1,0 +1,19 @@
+##################################################
+### Install packages
+- name: Install packages
+  become: true
+  apt: name={{ item }} state=present
+  with_items:
+    - git
+
+##################################################
+### Prepare Folder Structure
+- name: Create Folder Structure
+  file: path={{ item.path }} mode={{ item.mode }} state=directory
+  with_items:
+   - { path: "~/git", mode: 755 }
+
+##################################################
+### Configure Git user and email
+- name: Configure Git user and email
+  shell: "git config --global user.name {{ git_user }} && git config --global user.email {{ git_email }}"

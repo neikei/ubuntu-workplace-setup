@@ -1,0 +1,8 @@
+##################################################
+### Update Ubuntu
+- name: Update Ubuntu
+  become: true
+  apt:
+    upgrade: dist
+    update_cache: yes
+    dpkg_options: 'force-confold,force-confdef'

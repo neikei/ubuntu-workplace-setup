@@ -1,0 +1,14 @@
+##################################################
+### Install packages
+- name: Install packages
+  become: true
+  apt: name={{ item }} state=present
+  with_items:
+    - vagrant
+
+##################################################
+### Prepare Folder Structure
+- name: Create Folder Structure
+  file: path={{ item.path }} mode={{ item.mode }} state=directory
+  with_items:
+   - { path: "~/vagrant", mode: 755 }

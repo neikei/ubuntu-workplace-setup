@@ -1,0 +1,14 @@
+# Atom
+atom_ppa: ppa:webupd8team/atom
+
+# Seafile
+seafile_ppa: ppa:seafile/seafile-client
+
+# Spotify
+spotify_keyserver: keyserver.ubuntu.com
+spotify_keyserver_id: BBEBDCB318AD50EC6865090613B00F1FD2C19886
+spotify_repository: http://repository.spotify.com
+
+# Virutalbox
+vbox_repository_keys: [ 'http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc', 'http://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc' ]
+vbox_repository: http://download.virtualbox.org/virtualbox/debian

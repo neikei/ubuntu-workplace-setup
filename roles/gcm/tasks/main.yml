@@ -1,0 +1,23 @@
+##################################################
+### Check installed packages
+- name: Check installed packages
+  become: true
+  shell: 'apt-cache search gnome-connection-manager | wc -l'
+  register: package_found
+
+##################################################
+### Download packages
+- name: Download packages
+  get_url:
+    url: https://neikei.github.io/software/gnome-connection-manager_1.1.0-1.deb
+    dest: /tmp/
+  when: package_found.stdout == "1"
+
+##################################################
+### Install packages
+- name: Install packages
+  become: true
+  apt: deb={{ item }}
+  with_items:
+    - /tmp/gnome-connection-manager_1.1.0-1.deb
+  when: package_found.stdout == "1"

@@ -1,0 +1,17 @@
+##################################################
+### Install packages
+- name: Add apt key
+  become: true
+  apt_key: url={{ item }} state=present
+  with_items:
+    - "{{ vbox_repository_keys }}"
+
+- name: Add repository
+  become: true
+  apt_repository: repo="deb {{ vbox_repository }} {{ ansible_distribution_release }} main" state=present update_cache=yes
+
+- name: Install packages
+  become: true
+  apt: name={{ item }} state=present
+  with_items:
+    - virtualbox

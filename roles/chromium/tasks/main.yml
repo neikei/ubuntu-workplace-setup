@@ -1,0 +1,7 @@
+##################################################
+### Install packages
+- name: Install packages
+  become: true
+  apt: name={{ item }} state=present
+  with_items:
+    - chromium-browser

@@ -1,0 +1,5 @@
+" Color improvement for dark backgrounds
+hi comment ctermfg=blue
+
+" Show line numbers
+set number

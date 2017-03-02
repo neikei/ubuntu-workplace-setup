@@ -1,0 +1,11 @@
+##################################################
+### Install packages
+- name: Add repository
+  become: true
+  apt_repository: repo="{{ atom_ppa }}" state=present update_cache=yes
+
+- name: Install packages
+  become: true
+  apt: name={{ item }} state=present
+  with_items:
+    - atom

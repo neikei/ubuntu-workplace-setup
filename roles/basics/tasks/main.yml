@@ -1,0 +1,22 @@
+##################################################
+### Install basic system packages
+- name: Install basic packages
+  become: true
+  apt: name={{ item }} state=present
+  with_items:
+    - vim
+    - curl
+    - wget
+    - zip
+    - unzip
+    - apt-transport-https
+    - ca-certificates
+    - shutter
+
+##################################################
+### Convenience
+- name: Configure inputrc and vimrc
+  template: src={{ item.src }} dest={{ item.dest }}
+  with_items:
+    - { src: inputrc, dest: ~/.inputrc }
+    - { src: vimrc, dest: ~/.vimrc }

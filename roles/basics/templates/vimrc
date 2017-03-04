@@ -3,3 +3,4 @@ hi comment ctermfg=blue
 
 " Show line numbers
 set number
+:highlight LineNr ctermfg=grey

@@ -1,4 +1,3 @@
-
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
@@ -29,7 +28,7 @@ end
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "bento/ubuntu-16.04"
+  config.vm.box = "boxcutter/ubuntu1604-desktop"
 
   config.vm.provider "parallels"
   config.vm.provider "virtualbox"
@@ -47,7 +46,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.provider "virtualbox" do |vb|
-      vb.gui = false
+      vb.gui = true
       vb.customize ['modifyvm', :id, '--memory', 2048]
       vb.customize ["modifyvm", :id, "--cpus", 2]
       vb.customize ["modifyvm", :id, "--name", "ubuntu-workplace-ansible"]

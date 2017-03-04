@@ -1,20 +1,23 @@
 - hosts: localhost
   vars_prompt:
   - name: "git_user"
-    prompt: "What is your name?"
+    prompt: "What is your Git username?"
     private: no
   - name: "git_email"
-    prompt: "What is your email?"
+    prompt: "What is your Git email?"
     private: no
   - name: "standard"
-    prompt: "Do you need standard tools? (keepassx, chromium, thunderbird) [y/N]"
+    prompt: "Do you need standard tools? (vim, curl, wget, htop, shutter, keepassx, thunderbird) [y/N]"
     private: no
   - name: "development"
     prompt: "Do you need development tools? (git, gcm, remmina, virtualbox, vagrant, dbeaver) [y/N]"
     private: no
   - name: "editor"
-    prompt: "Do you need Atom [1] or Visual Studio Code [2]? [1,2,n]"
+    prompt: "Do you need Atom [1] or Visual Studio Code [2]? [1,2,N]"
     private: no
+  - name: "browser"
+    prompt: "Do you need Chromium [1] or Opera [2]? [1,2,N]"
+    private: no 
   - name: "seafile"
     prompt: "Do you need Seafile? [y/N]"
     private: no
@@ -24,18 +27,19 @@
   pre_tasks:
     - include_vars: config/defaults.yml
   roles:
-  - { role: basics }
   - { role: updates }
-  - { role: keepassx, when: standard|lower == "y" }
-  - { role: chromium, when: standard|lower == "y" }
-  - { role: thunderbird, when: standard|lower == "y" }
-  - { role: git, when: development|lower == "y" }
-  - { role: gcm, when: development|lower == "y" }
-  - { role: remmina, when: development|lower == "y" }
-  - { role: virtualbox, when: development|lower == "y" }
-  - { role: vagrant, when: development|lower == "y" }
-  - { role: dbeaver, when: development|lower == "y" }
-  - { role: atom, when: "'1' in editor" }
-  - { role: vscode, when: "'2' in editor" }
-  - { role: seafile, when: seafile|lower == "y" }
-  - { role: spotify, when: spotify|lower == "y" }
+  - { role: basics,       when: standard|lower == "y" }
+  - { role: keepassx,     when: standard|lower == "y" }
+  - { role: thunderbird,  when: standard|lower == "y" }
+  - { role: chromium,     when: "'1' in browser" }
+  - { role: opera,        when: "'2' in browser" }
+  - { role: git,          when: development|lower == "y" }
+  - { role: gcm,          when: development|lower == "y" }
+  - { role: remmina,      when: development|lower == "y" }
+  - { role: virtualbox,   when: development|lower == "y" }
+  - { role: vagrant,      when: development|lower == "y" }
+  - { role: dbeaver,      when: development|lower == "y" }
+  - { role: atom,         when: "'1' in editor" }
+  - { role: vscode,       when: "'2' in editor" }
+  - { role: seafile,      when: seafile|lower == "y" }
+  - { role: spotify,      when: spotify|lower == "y" }

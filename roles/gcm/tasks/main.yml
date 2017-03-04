@@ -21,3 +21,11 @@
   with_items:
    - "/tmp/{{ gcm_package }}"
   when: package_found.stdout != "1"
+
+##################################################
+### Configuration
+- name: Configure user home as default Path
+  become: true
+  template: src={{ item.src }} dest={{ item.dest }} mode=755
+  with_items:
+    - { src: gnome-connection-manager, dest: /usr/bin/gnome-connection-manager }

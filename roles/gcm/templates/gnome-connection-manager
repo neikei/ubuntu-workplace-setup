@@ -1,0 +1,3 @@
+  #!/bin/sh
+  cd ~
+  python /usr/share/gnome-connection-manager/gnome_connection_manager.py

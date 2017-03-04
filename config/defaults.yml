@@ -1,6 +1,10 @@
 # Atom
 atom_ppa: ppa:webupd8team/atom
 
+# Visual Studio Code
+vscode_repository_key: https://packages.microsoft.com/keys/microsoft.asc
+vscode_repository: http://packages.microsoft.com/repos/vscode
+
 # GCM
 gcm_url: https://neikei.github.io/software/
 gcm_package: gnome-connection-manager_1.1.0-1.deb

@@ -1,6 +1,14 @@
 # Atom
 atom_ppa: ppa:webupd8team/atom
 
+# GCM
+gcm_url: https://neikei.github.io/software/
+gcm_package: gnome-connection-manager_1.1.0-1.deb
+
+# DBeaver
+dbeaver_url: http://dbeaver.jkiss.org/files/
+dbeaver_package: dbeaver-ce_latest_amd64.deb
+
 # Seafile
 seafile_ppa: ppa:seafile/seafile-client
 

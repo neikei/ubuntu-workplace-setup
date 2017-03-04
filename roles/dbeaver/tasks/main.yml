@@ -2,15 +2,15 @@
 ### Check installed packages
 - name: Check installed packages
   become: true
-  shell: 'apt-cache search gnome-connection-manager | wc -l'
+  shell: 'apt-cache search dbeaver | wc -l'
   register: package_found
 
 ##################################################
 ### Download packages
 - name: Download packages
   get_url:
-    url: "{{ gcm_url }}/{{ gcm_package }}"
-    dest: "/tmp/{{ gcm_package }}"
+    url: "{{ dbeaver_url }}/{{ dbeaver_package }}"
+    dest: "/tmp/{{ dbeaver_package }}"
   when: package_found.stdout != "1"
 
 ##################################################
@@ -19,5 +19,5 @@
   become: true
   apt: deb={{ item }}
   with_items:
-   - "/tmp/{{ gcm_package }}"
+   - "/tmp/{{ dbeaver_package }}"
   when: package_found.stdout != "1"

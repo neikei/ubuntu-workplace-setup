@@ -9,6 +9,7 @@
     - wget
     - zip
     - unzip
+    - htop
     - apt-transport-https
     - ca-certificates
     - shutter

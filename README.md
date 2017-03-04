@@ -13,6 +13,7 @@ My software stack for the daily business on my preferred OS [Ubuntu Gnome](https
 - atom
 - virtualbox
 - vagrant
+- dbeaver
 - seafile
 - spotify
 

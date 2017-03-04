@@ -10,7 +10,7 @@
     prompt: "Do you need standard tools? (keepassx, chromium, thunderbird) [y/n]"
     private: no
   - name: "development"
-    prompt: "Do you need development tools? (git, gcm, remmina, atom, virtualbox, vagrant) [y/n]"
+    prompt: "Do you need development tools? (git, gcm, remmina, atom, virtualbox, vagrant, dbeaver) [y/n]"
     private: no
   - name: "seafile"
     prompt: "Do you need Seafile? [y/n]"
@@ -32,5 +32,6 @@
   - { role: atom, when: development|lower == "y" }
   - { role: virtualbox, when: development|lower == "y" }
   - { role: vagrant, when: development|lower == "y" }
+  - { role: dbeaver, when: development|lower == "y" }
   - { role: seafile, when: seafile|lower == "y" }
   - { role: spotify, when: spotify|lower == "y" }

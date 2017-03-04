@@ -52,5 +52,6 @@ Do you need Spotify? [y/N]:
 2. vagrant ssh
 3. cd /vagrant
 4. ./setup.sh
+
 - User: vagrant
 - Password: vagrant

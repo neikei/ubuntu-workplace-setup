@@ -7,19 +7,19 @@
     prompt: "What is your email?"
     private: no
   - name: "standard"
-    prompt: "Do you need standard tools? (keepassx, chromium, thunderbird) [y/n]"
+    prompt: "Do you need standard tools? (keepassx, chromium, thunderbird) [y/N]"
     private: no
   - name: "development"
-    prompt: "Do you need development tools? (git, gcm, remmina, virtualbox, vagrant, dbeaver) [y/n]"
+    prompt: "Do you need development tools? (git, gcm, remmina, virtualbox, vagrant, dbeaver) [y/N]"
     private: no
   - name: "editor"
-    prompt: "Do you need Atom [1] or Visual Studio Code [2]? [1,2]"
+    prompt: "Do you need Atom [1] or Visual Studio Code [2]? [1,2,n]"
     private: no
   - name: "seafile"
-    prompt: "Do you need Seafile? [y/n]"
+    prompt: "Do you need Seafile? [y/N]"
     private: no
   - name: "spotify"
-    prompt: "Do you need Spotify? [y/n]"
+    prompt: "Do you need Spotify? [y/N]"
     private: no
   pre_tasks:
     - include_vars: config/defaults.yml

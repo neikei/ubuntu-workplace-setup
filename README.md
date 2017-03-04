@@ -11,6 +11,7 @@ My software stack for the daily business on my preferred OS [Ubuntu Gnome](https
 - gcm
 - remmina
 - atom
+- visual studio code
 - virtualbox
 - vagrant
 - dbeaver

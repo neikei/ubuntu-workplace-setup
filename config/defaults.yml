@@ -12,3 +12,4 @@ spotify_repository: http://repository.spotify.com
 # Virutalbox
 vbox_repository_keys: [ 'http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc', 'http://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc' ]
 vbox_repository: http://download.virtualbox.org/virtualbox/debian
+vbox_version: 5.1

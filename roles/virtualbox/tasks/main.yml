@@ -8,10 +8,11 @@
 
 - name: Add repository
   become: true
-  apt_repository: repo="deb {{ vbox_repository }} {{ ansible_distribution_release }} main" state=present update_cache=yes
+  apt_repository: repo="deb {{ vbox_repository }} {{ ansible_distribution_release }} contrib" state=present update_cache=yes
 
 - name: Install packages
   become: true
-  apt: name={{ item }} state=present
+  apt: name={{ item }} state=latest
   with_items:
-    - virtualbox
+    - dkms
+    - virtualbox-{{ vbox_version }}

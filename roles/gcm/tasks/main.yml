@@ -11,7 +11,7 @@
   get_url:
     url: https://neikei.github.io/software/gnome-connection-manager_1.1.0-1.deb
     dest: /tmp/
-  when: package_found.stdout == "1"
+  when: package_found.stdout != "1"
 
 ##################################################
 ### Install packages
@@ -19,5 +19,5 @@
   become: true
   apt: deb={{ item }}
   with_items:
-    - /tmp/gnome-connection-manager_1.1.0-1.deb
-  when: package_found.stdout == "1"
+   - /tmp/gnome-connection-manager_1.1.0-1.deb
+  when: package_found.stdout != "1"

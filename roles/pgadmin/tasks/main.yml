@@ -1,0 +1,17 @@
+##################################################
+### Install packages
+- name: Add apt key
+  become: true
+  apt_key: url={{ item }} state=present
+  with_items:
+    - "{{ pgadmin_repository_key }}"
+
+- name: Add repository
+  become: true
+  apt_repository: repo="deb {{ pgadmin_repository }} {{ ansible_distribution_release }}-pgdg main" state=present update_cache=yes
+
+- name: Install packages
+  become: true
+  apt: name={{ item }} state=latest
+  with_items:
+    - pgadmin3

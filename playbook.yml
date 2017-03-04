@@ -10,7 +10,10 @@
     prompt: "Do you need standard tools? (vim, curl, wget, htop, shutter, keepassx, thunderbird) [y/N]"
     private: no
   - name: "development"
-    prompt: "Do you need development tools? (git, gcm, remmina, virtualbox, vagrant, dbeaver) [y/N]"
+    prompt: "Do you need development tools? (git, gcm, remmina, virtualbox, vagrant) [y/N]"
+    private: no
+  - name: "dbclient"
+    prompt: "Do you need pgAdmin [1] or DBeaver [2]? [1,2,N]"
     private: no
   - name: "editor"
     prompt: "Do you need Atom [1] or Visual Studio Code [2]? [1,2,N]"
@@ -38,7 +41,8 @@
   - { role: remmina,      when: development|lower == "y" }
   - { role: virtualbox,   when: development|lower == "y" }
   - { role: vagrant,      when: development|lower == "y" }
-  - { role: dbeaver,      when: development|lower == "y" }
+  - { role: pgadmin,      when: "'1' in dbclient" }
+  - { role: dbeaver,      when: "'2' in dbclient" }
   - { role: atom,         when: "'1' in editor" }
   - { role: vscode,       when: "'2' in editor" }
   - { role: seafile,      when: seafile|lower == "y" }

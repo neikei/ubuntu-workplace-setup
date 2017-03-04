@@ -19,6 +19,7 @@ My software stack for the daily business on my preferred OS [Ubuntu Gnome](https
 - visual studio code
 - virtualbox
 - vagrant
+- pgadmin
 - dbeaver
 - seafile
 - spotify
@@ -35,15 +36,17 @@ My software stack for the daily business on my preferred OS [Ubuntu Gnome](https
 3. cd ubuntu-workplace-setup-master
 4. ./setup.sh
 ```
-SUDO password:
-What is your name for Git?:
-What is your email for Git?:
+SUDO password: 
+What is your Git username?:
+What is your Git email?:
 Do you need standard tools? (vim, curl, wget, htop, shutter, keepassx, thunderbird) [y/N]:
-Do you need development tools? (git, gcm, remmina, virtualbox, vagrant, dbeaver) [y/N]:
+Do you need development tools? (git, gcm, remmina, virtualbox, vagrant) [y/N]:
+Do you need pgAdmin [1] or DBeaver [2]? [1,2,N]:
 Do you need Atom [1] or Visual Studio Code [2]? [1,2,N]:
 Do you need Chromium [1] or Opera [2]? [1,2,N]:
 Do you need Seafile? [y/N]:
 Do you need Spotify? [y/N]:
+
 ```
 
 ### Vagrantbox for testing

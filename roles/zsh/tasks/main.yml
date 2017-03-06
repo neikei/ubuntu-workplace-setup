@@ -16,6 +16,7 @@
     dest: ~/.zshrc
     regexp: 'ZSH_THEME="robbyrussell"'
     line: 'ZSH_THEME="agnoster"'
+    backrefs: yes
 
 - name: Replace user bash with zsh
   shell: whoami

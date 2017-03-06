@@ -37,7 +37,7 @@ My software stack for the daily business on my preferred OS [Ubuntu Gnome](https
 3. cd ubuntu-workplace-setup-master
 4. ./setup.sh
 ```
-SUDO password: 
+SUDO password:
 What is your Git username?:
 What is your Git email?:
 Do you need standard tools? (vim, curl, wget, htop, shutter, keepassx, thunderbird) [y/N]:
@@ -47,6 +47,7 @@ Do you need Atom [1] or Visual Studio Code [2]? [1,2,N]:
 Do you need Chromium [1] or Opera [2]? [1,2,N]:
 Do you need Seafile? [y/N]:
 Do you need Spotify? [y/N]:
+Do you need zsh as default shell? [y/N]:
 
 ```
 

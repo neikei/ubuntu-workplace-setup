@@ -23,6 +23,7 @@ My software stack for the daily business on my preferred OS [Ubuntu Gnome](https
 - dbeaver
 - seafile
 - spotify
+- zsh
 
 ### Requirements
 

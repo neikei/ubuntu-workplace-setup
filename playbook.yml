@@ -27,6 +27,9 @@
   - name: "spotify"
     prompt: "Do you need Spotify? [y/N]"
     private: no
+  - name: "zsh"
+    prompt: "Do you need zsh as default shell? [y/N]"
+    private: no
   pre_tasks:
     - include_vars: config/defaults.yml
   roles:
@@ -41,9 +44,10 @@
   - { role: remmina,      when: development|lower == "y" }
   - { role: virtualbox,   when: development|lower == "y" }
   - { role: vagrant,      when: development|lower == "y" }
-  - { role: pgadmin,      when: "'1' in dbclient" }
-  - { role: dbeaver,      when: "'2' in dbclient" }
   - { role: atom,         when: "'1' in editor" }
   - { role: vscode,       when: "'2' in editor" }
+  - { role: pgadmin,      when: "'1' in dbclient" }
+  - { role: dbeaver,      when: "'2' in dbclient" }
   - { role: seafile,      when: seafile|lower == "y" }
   - { role: spotify,      when: spotify|lower == "y" }
+  - { role: zsh,          when: zsh|lower == "y" }

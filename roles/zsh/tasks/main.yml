@@ -1,0 +1,26 @@
+##################################################
+### Install packages
+- name: Install packages
+  become: true
+  apt: name={{ item }} state=present
+  with_items:
+    - git-core
+    - zsh
+    - fonts-powerline
+
+- name: Install oh my zsh
+  shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+- name: Choose theme agnoster
+  lineinfile:
+    dest: ~/.zshrc
+    regexp: 'ZSH_THEME="robbyrussell"'
+    line: 'ZSH_THEME="agnoster"'
+
+- name: Replace user bash with zsh
+  shell: whoami
+  register: user
+
+- name: Set zsh as default shell
+  become: true
+  user: name={{ user.stdout }} shell=/bin/zsh

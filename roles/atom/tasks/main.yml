@@ -9,3 +9,9 @@
   apt: name={{ item }} state=present
   with_items:
     - atom
+
+- name: Install extensions
+  shell: apm install {{ item }}
+  with_items:
+    - file-icons
+    - language-ansible

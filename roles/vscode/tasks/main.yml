@@ -15,3 +15,12 @@
   apt: name={{ item }} state=present
   with_items:
     - code
+
+- name: Install extensions
+  shell: code --install-extension {{ item }}
+  with_items:
+    - haaaad.ansible
+    - timonwong.ansible-autocomplete
+    - therealmarv.vscode-theme-dark-atom-dark-green-cursor
+    - robertohuertasm.vscode-icons
+

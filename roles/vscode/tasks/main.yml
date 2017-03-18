@@ -23,4 +23,5 @@
     - timonwong.ansible-autocomplete
     - therealmarv.vscode-theme-dark-atom-dark-green-cursor
     - robertohuertasm.vscode-icons
-
+    - waderyan.gitblame
+    - donjayamanne.githistory

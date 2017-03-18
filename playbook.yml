@@ -21,6 +21,9 @@
   - name: "browser"
     prompt: "Do you need Chromium [1] or Opera [2]? [1,2,N]"
     private: no 
+  - name: "java"
+    prompt: "Do you need Java? [y/N]"
+    private: no
   - name: "seafile"
     prompt: "Do you need Seafile? [y/N]"
     private: no
@@ -48,6 +51,7 @@
   - { role: vscode,       when: "'2' in editor" }
   - { role: pgadmin,      when: "'1' in dbclient" }
   - { role: dbeaver,      when: "'2' in dbclient" }
+  - { role: java,         when: java|lower == "y" }
   - { role: seafile,      when: seafile|lower == "y" }
   - { role: spotify,      when: spotify|lower == "y" }
   - { role: zsh,          when: zsh|lower == "y" }

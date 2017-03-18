@@ -1,0 +1,20 @@
+##################################################
+### Install packages
+- name: Install packages
+  become: true
+  apt: name={{ item }} state=present
+  with_items:
+    - default-jdk
+
+##################################################
+### Visual Studio Code Extension
+- name: Check installed vagrant version
+  shell: 'dpkg --list | grep "^ii  code " | wc -l'
+  register: vscode_installed
+
+- name: Install extensions
+  shell: code --install-extension {{ item }}
+  with_items:
+    - redhat.java
+    - DSnake.java-debug
+  when: vscode_installed.stdout != "0"

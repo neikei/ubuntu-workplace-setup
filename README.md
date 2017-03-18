@@ -24,6 +24,7 @@ My software stack for the daily business on my preferred OS [Ubuntu Gnome](https
 - seafile
 - spotify
 - zsh
+- java
 
 ### Requirements
 
@@ -45,6 +46,7 @@ Do you need development tools? (git, gcm, remmina, virtualbox, vagrant) [y/N]:
 Do you need pgAdmin [1] or DBeaver [2]? [1,2,N]:
 Do you need Atom [1] or Visual Studio Code [2]? [1,2,N]:
 Do you need Chromium [1] or Opera [2]? [1,2,N]:
+Do you need Java? [y/N]:
 Do you need Seafile? [y/N]:
 Do you need Spotify? [y/N]:
 Do you need zsh as default shell? [y/N]:

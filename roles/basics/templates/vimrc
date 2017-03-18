@@ -1,6 +1,8 @@
 " Color improvement for dark backgrounds
-hi comment ctermfg=blue
+:color desert
 
 " Show line numbers
 set number
-:highlight LineNr ctermfg=grey
+
+" Enable syntax highlighting
+syntax on

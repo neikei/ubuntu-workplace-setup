@@ -38,3 +38,7 @@ vbox_version: 5.1
 vagrant_version: 1.9.2
 vagrant_url: https://releases.hashicorp.com/vagrant/{{ vagrant_version }}
 vagrant_package: vagrant_{{ vagrant_version }}_x86_64.deb
+
+# Cisco AnyConnect Client
+anyconnect_url: https://developer.cisco.com/fileMedia/download/20d3f67b-ff95-4817-b6df-199db01eebf2
+anyconnect_package: anyconnect.tar.gz

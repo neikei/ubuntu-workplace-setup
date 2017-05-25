@@ -26,7 +26,7 @@ My software stack for the daily business on my preferred OS [Ubuntu Gnome](https
 - zsh
 - java
 - gnome vpn extensions
-- cisco anyconnect client
+- cisco anyconnect client (setup.sh needs an re-run if it fails here...)
 
 ### Requirements
 

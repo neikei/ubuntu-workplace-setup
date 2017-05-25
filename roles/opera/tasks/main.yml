@@ -6,6 +6,6 @@
 
 - name: Install packages
   become: true
-  apt: name={{ item }} state=latest
+  apt: name={{ item }} state=latest allow_unauthenticated=yes
   with_items:
     - opera-stable

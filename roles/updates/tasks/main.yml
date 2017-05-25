@@ -1,8 +1,31 @@
 ##################################################
 ### Update Ubuntu
+- name: Install needrestart
+  become: true
+  apt: name={{ item }} state=latest update_cache=yes
+  with_items:
+    - needrestart
+
 - name: Update Ubuntu
   become: true
   apt:
     upgrade: dist
     update_cache: yes
     dpkg_options: 'force-confold,force-confdef'
+
+- name: Check Required Restart
+  become: true
+  shell: '/usr/sbin/needrestart -b | grep "NEEDRESTART-KSTA: 1" | wc -l'
+  check_mode: no
+  changed_when: false
+  register: reboot_required
+
+- name: Inform user about required reboot
+  fail: msg="Your workstation needs an reboot. Please reboot and start the setup.sh script again."
+  when: reboot_required.stdout != "1"
+
+#The kernel status (`NEEDRESTART-KSTA`) value has the following meaning:
+#- *0*: unknown or failed to detect
+#- *1*: no pending upgrade
+#- *2*: ABI compatible upgrade pending
+#- *3*: version upgrade pending

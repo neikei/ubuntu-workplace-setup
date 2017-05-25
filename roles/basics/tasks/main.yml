@@ -16,8 +16,29 @@
 
 ##################################################
 ### Convenience
-- name: Configure inputrc and vimrc
-  template: src={{ item.src }} dest={{ item.dest }}
+- name: Configure inputrc and vimrc for root
+  become: true
+  template: src={{ item.src }} dest={{ item.dest }} owner=root group=root
   with_items:
-    - { src: inputrc, dest: ~/.inputrc }
-    - { src: vimrc, dest: ~/.vimrc }
+    - { src: inputrc, dest: /root/.inputrc }
+    - { src: vimrc, dest: /root/.vimrc }
+
+- name: Configure inputrc for users
+  become: true
+  template:
+    src: inputrc
+    dest: "/home/{{item}}/.inputrc"
+    owner: "{{item}}"
+    group: "{{item}}"
+  with_lines:
+    - "ls /home/"
+
+- name: Configure vimrc for users
+  become: true
+  template:
+    src: vimrc
+    dest: "/home/{{item}}/.vimrc"
+    owner: "{{item}}"
+    group: "{{item}}"
+  with_lines:
+    - "ls /home/"

@@ -8,8 +8,13 @@
     - zsh
     - fonts-powerline
 
+- name: Check if zsh is already installed
+  shell: dpkg -l | grep "^ii  zsh" | wc -l
+  register: zsh_installed
+
 - name: Install oh my zsh
   shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  when: zsh_installed.stdout != "0"
 
 - name: Choose theme agnoster
   lineinfile:

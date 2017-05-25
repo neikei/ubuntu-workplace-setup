@@ -10,7 +10,6 @@ gcm_url: https://neikei.github.io/software/
 gcm_package: gnome-connection-manager_1.1.0-1.deb
 
 # Opera
-opera_repository_key: https://deb.opera.com/archive.key
 opera_repository: https://deb.opera.com/opera-stable/
 
 # pgAdmin

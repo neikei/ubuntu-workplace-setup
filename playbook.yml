@@ -13,7 +13,7 @@
     prompt: "Do you need development tools? (git, gcm, remmina, virtualbox, vagrant) [y/N]"
     private: no
   - name: "vpn"
-    prompt: "Do you need VPN extensions [1] or Cisco AnyConnect [2]? [1,2,N]"
+    prompt: "Do you need Gnome VPN extensions [y/N]"
     private: no
   - name: "dbclient"
     prompt: "Do you need pgAdmin [1] or DBeaver [2]? [1,2,N]"
@@ -50,8 +50,7 @@
   - { role: remmina,      when: development|lower == "y" }
   - { role: virtualbox,   when: development|lower == "y" }
   - { role: vagrant,      when: development|lower == "y" }
-  - { role: vpn_ext,      when: "'1' in vpn" }
-  - { role: anyconnect,   when: "'2' in vpn" }
+  - { role: vpn_ext,      when: vpn|lower == "y" }
   - { role: atom,         when: "'1' in editor" }
   - { role: vscode,       when: "'2' in editor" }
   - { role: pgadmin,      when: "'1' in dbclient" }

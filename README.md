@@ -26,7 +26,6 @@ My software stack for the daily business on my preferred OS [Ubuntu Gnome](https
 - zsh
 - java
 - gnome vpn extensions
-- cisco anyconnect client (setup.sh needs an re-run if it fails here...)
 
 ### Requirements
 
@@ -45,7 +44,7 @@ What is your Git username?:
 What is your Git email?:
 Do you need standard tools? (vim, curl, wget, htop, shutter, keepassx, thunderbird) [y/N]:
 Do you need development tools? (git, gcm, remmina, virtualbox, vagrant) [y/N]:
-Do you need VPN extensions [1] or Cisco AnyConnect [2]? [1,2,N]
+Do you need Gnome VPN extensions [y/N]:
 Do you need pgAdmin [1] or DBeaver [2]? [1,2,N]:
 Do you need Atom [1] or Visual Studio Code [2]? [1,2,N]:
 Do you need Chromium [1] or Opera [2]? [1,2,N]:

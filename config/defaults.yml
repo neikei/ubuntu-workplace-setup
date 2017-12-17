@@ -25,7 +25,7 @@ seafile_ppa: ppa:seafile/seafile-client
 
 # Spotify
 spotify_keyserver: keyserver.ubuntu.com
-spotify_keyserver_id: BBEBDCB318AD50EC6865090613B00F1FD2C19886
+spotify_keyserver_id: 0DF731E45CE24F27EEEB1450EFDC8610341D9410
 spotify_repository: http://repository.spotify.com
 
 # Virutalbox

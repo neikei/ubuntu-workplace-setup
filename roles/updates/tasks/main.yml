@@ -13,6 +13,13 @@
     update_cache: yes
     dpkg_options: 'force-confold,force-confdef'
 
+- name: Check Required Restart Information available
+  become: true
+  shell: '/usr/sbin/needrestart -b | grep "NEEDRESTART-KSTA" | wc -l'
+  check_mode: no
+  changed_when: false
+  register: reboot_required_info_available
+
 - name: Check Required Restart
   become: true
   shell: '/usr/sbin/needrestart -b | grep "NEEDRESTART-KSTA: 1" | wc -l'
@@ -22,7 +29,7 @@
 
 - name: Inform user about required reboot
   fail: msg="Your workstation needs an reboot. Please reboot and start the setup.sh script again."
-  when: reboot_required.stdout != "1"
+  when: reboot_required_info_available == "1" and reboot_required.stdout != "1"
 
 #The kernel status (`NEEDRESTART-KSTA`) value has the following meaning:
 #- *0*: unknown or failed to detect

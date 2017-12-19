@@ -1,7 +1,9 @@
 ##################################################
-### Install packages
-- name: Install packages
+### Install office tools
+- name: Install office tools
   become: true
   apt: name={{ item }} state=present
   with_items:
     - thunderbird
+    - shutter
+    - keepassx

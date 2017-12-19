@@ -3,6 +3,7 @@
 My software stack for the daily business on my preferred OS [Ubuntu Gnome](https://ubuntugnome.org/).
 
 ### Included software
+
 - vim
 - curl
 - wget
@@ -13,6 +14,7 @@ My software stack for the daily business on my preferred OS [Ubuntu Gnome](https
 - opera
 - thunderbird
 - git
+- gitg
 - gcm
 - remmina
 - atom
@@ -38,20 +40,22 @@ My software stack for the daily business on my preferred OS [Ubuntu Gnome](https
 2. unzip master.zip
 3. cd ubuntu-workplace-setup-master
 4. ./setup.sh
-```
+
+```bash
 SUDO password:
-What is your Git username?:
-What is your Git email?:
-Do you need standard tools? (vim, curl, wget, htop, shutter, keepassx, thunderbird) [y/N]:
-Do you need development tools? (git, gcm, remmina, virtualbox, vagrant) [y/N]:
-Do you need Gnome VPN extensions [y/N]:
-Do you need pgAdmin [1] or DBeaver [2]? [1,2,N]:
-Do you need Atom [1] or Visual Studio Code [2]? [1,2,N]:
-Do you need Chromium [1] or Opera [2]? [1,2,N]:
-Do you need Java? [y/N]:
-Do you need Seafile? [y/N]:
-Do you need Spotify? [y/N]:
-Do you need zsh as default shell? [y/N]:
+What is your Git username?: neikei
+What is your Git email?: neikei@test.test
+Do you need cli tools? (vim, curl, wget, htop) [y/N]: y
+Do you need office tools? (shutter, keepassx, thunderbird) [y/N]: y
+Do you need development tools? (git, gcm, remmina, virtualbox, vagrant) [y/N]: y
+Do you need Gnome VPN extensions? [y/N]: y
+Do you need pgAdmin [1] or DBeaver [2]? [1,2,N]: 12
+Do you need Atom [1] or Visual Studio Code [2]? [1,2,N]: 12
+Do you need Chromium [1] or Opera [2]? [1,2,N]: 12
+Do you need Java? [y/N]: y
+Do you need Seafile? [y/N]: y
+Do you need Spotify? [y/N]: y
+Do you need zsh as default shell? [y/N]: y
 ```
 
 ### Vagrantbox for testing
@@ -62,5 +66,10 @@ Do you need zsh as default shell? [y/N]:
 4. ./setup.sh
 
 GUI access
+
 - User: vagrant
 - Password: vagrant
+
+## Feedback, Issues and Pull-Requests
+
+Feel free to report issues, fork this project and submit pull requests.

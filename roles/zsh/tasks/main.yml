@@ -12,8 +12,18 @@
   shell: dpkg -l | grep "^ii  zsh" | wc -l
   register: zsh_installed
 
+- name: Download zsh installer
+  get_url:
+    url: https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+    dest: /tmp/zsh_installer.sh
+    mode: 0777
+  when: zsh_installed.stdout != "0"
+
 - name: Install oh my zsh
-  shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  shell: bash zsh_installer.sh
+  args:
+    chdir: /tmp/
+  ignore_errors: yes # TODO: Fix "Password: chsh: PAM: Authentication failure"
   when: zsh_installed.stdout != "0"
 
 - name: Choose theme agnoster

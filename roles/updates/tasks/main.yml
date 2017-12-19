@@ -15,14 +15,14 @@
 
 - name: Check Required Restart Information available
   become: true
-  shell: '/usr/sbin/needrestart -b | grep "NEEDRESTART-KSTA" | wc -l'
+  shell: 'export LC_ALL=en_US.UTF-8 && /usr/sbin/needrestart -b | grep "NEEDRESTART-KSTA" | wc -l'
   check_mode: no
   changed_when: false
   register: reboot_required_info_available
 
 - name: Check Required Restart
   become: true
-  shell: '/usr/sbin/needrestart -b | grep "NEEDRESTART-KSTA: 1" | wc -l'
+  shell: 'export LC_ALL=en_US.UTF-8 && /usr/sbin/needrestart -b | grep "NEEDRESTART-KSTA: 1" | wc -l'
   check_mode: no
   changed_when: false
   register: reboot_required

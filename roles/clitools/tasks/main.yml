@@ -12,7 +12,6 @@
     - htop
     - apt-transport-https
     - ca-certificates
-    - shutter
 
 ##################################################
 ### Convenience

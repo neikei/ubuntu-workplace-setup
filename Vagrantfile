@@ -28,7 +28,7 @@ end
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "fso/xenial64-desktop"
+  config.vm.box = "peru/ubuntu-18.04-desktop-amd64"
 
   config.vm.provider "parallels"
   config.vm.provider "virtualbox"

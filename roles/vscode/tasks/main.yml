@@ -19,7 +19,7 @@
 - name: Install extensions
   shell: code --install-extension {{ item }}
   with_items:
-    - haaaad.ansible
+    - vscoss.vscode-ansible
     - timonwong.ansible-autocomplete
     - therealmarv.vscode-theme-dark-atom-dark-green-cursor
     - robertohuertasm.vscode-icons

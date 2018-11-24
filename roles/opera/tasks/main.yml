@@ -1,8 +1,12 @@
 ##################################################
 ### Install packages
+- name: Add apt key
+  become: true
+  apt_key: url={{ opera_repository_key }} state=present
+
 - name: Add repository
   become: true
-  apt_repository: repo="deb {{ opera_repository }} stable non-free" state=present update_cache=yes
+  apt_repository: repo="deb [arch=amd64] {{ opera_repository }} stable non-free" state=present update_cache=yes
 
 - name: Install packages
   become: true

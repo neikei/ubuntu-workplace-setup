@@ -31,7 +31,7 @@ My software stack for the daily business on my preferred OS [Ubuntu Gnome](https
 
 ### Requirements
 
-- Ubuntu >= 16.04
+- Ubuntu >= 18.04
 - unzip ( Installation: sudo apt install unzip )
 
 ### Installation
@@ -43,8 +43,8 @@ My software stack for the daily business on my preferred OS [Ubuntu Gnome](https
 
 ```bash
 SUDO password:
-What is your Git username?: neikei
-What is your Git email?: neikei@test.test
+What is your Git username?:
+What is your Git email?:
 Do you need cli tools? (vim, curl, wget, htop) [y/N]: y
 Do you need office tools? (shutter, keepassx, thunderbird) [y/N]: y
 Do you need development tools? (git, gcm, remmina, virtualbox, vagrant) [y/N]: y
@@ -56,6 +56,7 @@ Do you need Java? [y/N]: y
 Do you need Seafile? [y/N]: y
 Do you need Spotify? [y/N]: y
 Do you need zsh as default shell? [y/N]: y
+Do you want to remove ads and tracking? [y/N]: y
 ```
 
 ### Vagrantbox for testing

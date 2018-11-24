@@ -10,6 +10,7 @@ gcm_url: https://neikei.github.io/software/
 gcm_package: gnome-connection-manager_1.1.0-1.deb
 
 # Opera
+opera_repository_key: https://deb.opera.com/archive.key
 opera_repository: https://deb.opera.com/opera-stable/
 
 # pgAdmin
@@ -23,17 +24,19 @@ dbeaver_package: dbeaver-ce_latest_amd64.deb
 # Seafile
 seafile_ppa: ppa:seafile/seafile-client
 
-# Spotify
-spotify_keyserver: keyserver.ubuntu.com
-spotify_keyserver_id: 0DF731E45CE24F27EEEB1450EFDC8610341D9410
-spotify_repository: http://repository.spotify.com
-
 # Virutalbox
 vbox_repository_keys: [ 'http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc', 'http://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc' ]
 vbox_repository: http://download.virtualbox.org/virtualbox/debian
 vbox_version: 5.2
 
 # Vagrant
-vagrant_version: 2.0.1
+vagrant_version: 2.2.1
 vagrant_url: https://releases.hashicorp.com/vagrant/{{ vagrant_version }}
 vagrant_package: vagrant_{{ vagrant_version }}_x86_64.deb
+
+# Unneeded packages
+cleanup_packages:
+  - ubuntu-web-launchers
+  - whoopsie
+  - apport
+  - apport-gtk

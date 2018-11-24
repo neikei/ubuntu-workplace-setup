@@ -1,15 +1,12 @@
 ##################################################
 ### Install packages
-- name: Add apt key
-  become: true
-  apt_key: keyserver={{ spotify_keyserver }} id={{ spotify_keyserver_id }}
-
-- name: Add repository
-  become: true
-  apt_repository: repo="deb {{ spotify_repository }} stable non-free" state=present update_cache=yes
-
 - name: Install packages
   become: true
-  apt: name={{ item }} state=present
-  with_items:
-    - spotify-client
+  command: snap install spotify
+
+# Available in Ansible 2.8+
+#- name: Install packages
+#  become: true
+#  snap: name={{ item }} state=present
+#  with_items:
+#    - spotify

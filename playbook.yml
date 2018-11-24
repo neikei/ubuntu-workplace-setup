@@ -39,6 +39,9 @@
   - name: "zsh"
     prompt: "Do you need zsh as default shell? [y/N]"
     private: no
+  - name: "cleanup"
+    prompt: "Do you want to remove ads and tracking? [y/N]"
+    private: no
   pre_tasks:
     - include_vars: config/defaults.yml
   roles:
@@ -61,3 +64,4 @@
   - { role: seafile,      when: seafile|lower == "y" }
   - { role: spotify,      when: spotify|lower == "y" }
   - { role: zsh,          when: zsh|lower == "y" }
+  - { role: cleanup,      when: cleanup|lower == "y" }

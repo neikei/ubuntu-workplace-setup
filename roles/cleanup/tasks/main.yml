@@ -1,0 +1,9 @@
+##################################################
+### Remove packages
+- name: Remove packages
+  become: true
+  apt: 
+    name: "{{ item }}"
+    state: absent
+  with_items:
+    - "{{ cleanup_packages }}"
